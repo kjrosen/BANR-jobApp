@@ -1,7 +1,6 @@
 'use strict';
 
 
-
 //All questions can be broken down by how many options are on the radio
 function Ask2optQuestion(props) {
 
@@ -12,7 +11,7 @@ function Ask2optQuestion(props) {
 				<input type="radio" value="b" class="col" onClick={props.actionB}>b. {props.b}</input>
 			</label>
 		</form>
-	)
+	);
 }
 
 
@@ -28,7 +27,7 @@ function Ask5optQuestion(props) {
 				<input type="radio" value="e" class="row">a. {props.e}</input>
 			</label>
 		</form>
-	)
+	);
 }
 
 
@@ -161,7 +160,7 @@ const Q4 = <HandleButtonTest />;
 
 const Q5 = <Ask5optQuestion question={questionsAndAnswers[question5][q]} a={questionsAndAnswers[question5][a]} b={questionsAndAnswers[question5][b]} c={questionsAndAnswers[question5][c]} d={questionsAndAnswers[question5][d]} e={questionsAndAnswers[question5][e]} />;
 const Q6 = <Ask5optQuestion question={questionsAndAnswers[question6][q]} a={questionsAndAnswers[question6][a]} b={questionsAndAnswers[question6][b]} c={questionsAndAnswers[question6][c]} d={questionsAndAnswers[question6][d]} />;
-const Q5 = <Ask5optQuestion question={questionsAndAnswers[question7][q]} a={questionsAndAnswers[question7][a]} b={questionsAndAnswers[question7][b]} c={questionsAndAnswers[question7][c]} d={questionsAndAnswers[question7][d]} e={questionsAndAnswers[question7][e]} />;
-const Q5 = <Ask5optQuestion question={questionsAndAnswers[question8][q]} a={questionsAndAnswers[question8][a]} b={questionsAndAnswers[question8][b]} />;
+const Q7 = <Ask5optQuestion question={questionsAndAnswers[question7][q]} a={questionsAndAnswers[question7][a]} b={questionsAndAnswers[question7][b]} c={questionsAndAnswers[question7][c]} d={questionsAndAnswers[question7][d]} e={questionsAndAnswers[question7][e]} />;
+const Q8 = <Ask5optQuestion question={questionsAndAnswers[question8][q]} a={questionsAndAnswers[question8][a]} b={questionsAndAnswers[question8][b]} />;
 
-// root.render();
+root.render(Q1);
