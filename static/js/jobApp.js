@@ -1,3 +1,6 @@
+'use strict';
+
+//collect all input options to add event listeners to them
 const Q1opts = document.querySelectorAll('#quest1 input');
 const Q2opts = document.querySelectorAll('#quest2 input');
 const Q3opts = document.querySelectorAll('#quest3 input');
@@ -7,6 +10,7 @@ const Q6opts = document.querySelectorAll('#quest6 input');
 const Q7opts = document.querySelectorAll('#quest7 input');
 const Q8opts = document.querySelectorAll('#quest8 input');
 
+//collect all qustion boxes to add and remove the hide class to show when ready
 const questBox1Class = document.getElementById('quest1').classList;
 const questBox2Class = document.getElementById('quest2').classList;
 const questBox3Class = document.getElementById('quest3').classList;
@@ -17,12 +21,13 @@ const questBox7Class = document.getElementById('quest7').classList;
 const questBox8Class = document.getElementById('quest8').classList;
 const closerBoxClass = document.getElementById('closer').classList;
 
+//variables that need to track between events
 let start;
 let end;
 let timeHold;
 let clickCount = 0;
 
-
+//q1 alerts for no, progresses for yes
 for (const answer of Q1opts) {
 	answer.addEventListener('click', (evt) => {
 		clickCount += 1;
@@ -39,6 +44,7 @@ for (const answer of Q1opts) {
 	});
 }
 
+//q2 alerts for no, progresses for yes or no
 for (const answer of Q2opts) {
 	answer.addEventListener('click', (evt) => {
 		if (answer.value == 'b') {
@@ -49,6 +55,7 @@ for (const answer of Q2opts) {
 	});
 }
 
+//q3 alerts for no, double progresses for yes, single progress for no
 for (const answer of Q3opts) {
 	answer.addEventListener('click', (evt) => {
 		if (answer.value == 'a'){
@@ -62,13 +69,14 @@ for (const answer of Q3opts) {
 	});
 }
 
-
+//at press the button takes the current time
 Q4.addEventListener('mousedown', (evt) => {
 	// evt.preventDefault()
 
 	start = new Date();
 });
-
+//at release it checks the start time with the current time
+//less than 5 seconds triggers alert, more progresses
 Q4.addEventListener('mouseup', (evt) => {
 	// evt.preventDefault()
 
@@ -83,7 +91,7 @@ Q4.addEventListener('mouseup', (evt) => {
 	} 
 });
 
-
+//all answers for remaining questions progress with no stops
 for (const answer of Q5opts) {
 	answer.addEventListener('click', (evt) => {
 		
